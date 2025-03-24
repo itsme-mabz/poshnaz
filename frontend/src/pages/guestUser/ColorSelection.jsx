@@ -2,38 +2,28 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-const FabricSelection = () => {
+const ColorSelection = () => {
   const navigate = useNavigate();
 
   const fabrics = [
     {
-      type: 'silk',
-      name: 'Silk',
-      description: 'Luxurious and smooth with a natural sheen',
+      type: 'Red',
+      name: 'Red',
       image: 'https://placehold.co/600x400/png',
       price: 500,
     },
     {
-      type: 'boski',
-      name: 'Boski',
-      description: 'Premium cotton blend with a soft, smooth finish',
+      type: 'Blue',
+      name: 'Blue',
       image: 'https://placehold.co/600x400/png',
       price: 350,
     },
     {
-      type: 'cotton',
-      name: 'Cotton',
-      description: 'Breathable and comfortable for everyday wear',
+      type: 'Green',
+      name: 'Green',
       image: 'https://placehold.co/600x400/png',
       price: 200,
-    },
-    {
-      type: 'washing-wear',
-      name: 'Washing Wear',
-      description: 'Durable and easy to maintain',
-      image: 'https://placehold.co/600x400/png',
-      price: 250,
-    },
+    }
   ];
 
   // Variants for the card container
@@ -53,14 +43,14 @@ const FabricSelection = () => {
   };
 
   const handleSelect = (type) => {
-    navigate('/color-selection');
+    navigate('/design-selection');
   };
 
   return (
     <div 
       className="w-full min-h-screen bg-cover bg-center bg-no-repeat relative"
       style={{
-        backgroundImage: 'url("https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2070&auto=format&fit=crop")',
+        backgroundImage: 'url("https://img.freepik.com/premium-photo/black-luxury-cloth-background_46250-2422.jpg?semt=ais_hybrid")',
       }}
     >
       {/* Overlay for better text readability */}
@@ -70,8 +60,8 @@ const FabricSelection = () => {
       <div className="relative max-w-7xl mx-auto px-4 py-16">
         {/* Section Heading */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Select Your Fabric</h1>
-          <p className="text-lg md:text-xl text-white">Choose the perfect material for your garment</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Choose your color</h1>
+          <p className="text-lg md:text-xl text-white">Choose the perfect color for your garment</p>
         </div>
 
         {/* Fabric Cards (smaller size + 3 columns on larger screens) */}
@@ -98,12 +88,6 @@ const FabricSelection = () => {
                   <h3 className="text-xl font-semibold text-gray-900 inter">{fabric.name}</h3>
                   <p className="text-lg text-gray-700 font-medium">${fabric.price}</p>
                 </div>
-                <motion.p
-                  className="text-gray-600 text-sm"
-                  variants={descVariants}
-                >
-                  {fabric.description}
-                </motion.p>
               </div>
             </motion.div>
           ))}
@@ -113,4 +97,4 @@ const FabricSelection = () => {
   );
 };
 
-export default FabricSelection;
+export default ColorSelection;
